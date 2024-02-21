@@ -4,21 +4,29 @@ public class GuestVo {
 
 	private int no;
 	private String name;
-	private String pw;
+	private String password;
 	private String content;
-	private String reg_date;
+	private String regDate;
 
 	public GuestVo() {
-		super();
+
+	}
+	
+	public GuestVo(String name, String password, String content, String regDate) {
+		
+		this.name = name;
+		this.password = password;
+		this.content = content;
+		this.regDate = regDate;
 	}
 
-	public GuestVo(int no, String name, String pw, String content, String reg_date) {
+	public GuestVo(int no, String name, String password, String content, String regDate) {
 		super();
 		this.no = no;
 		this.name = name;
-		this.pw = pw;
+		this.password = password;
 		this.content = content;
-		this.reg_date = reg_date;
+		this.regDate = regDate;
 	}
 
 	public int getNo() {
@@ -37,12 +45,12 @@ public class GuestVo {
 		this.name = name;
 	}
 
-	public String getPw() {
-		return pw;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getContent() {
@@ -53,14 +61,12 @@ public class GuestVo {
 		this.content = content;
 	}
 
-	public String getReg_date() {
-		return reg_date;
+	public String getRegDate() {
+		return regDate;
 	}
 
-	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
 	}
-	
-	
 
 }
