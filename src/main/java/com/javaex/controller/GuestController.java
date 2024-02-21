@@ -20,7 +20,6 @@ public class GuestController extends HttpServlet {
 			
 			String action = request.getParameter("action");
 			
-			
 			if("aform".equals(action)) {
 				
 				
@@ -53,17 +52,31 @@ public class GuestController extends HttpServlet {
 				System.out.println("delete");
 				
 				int no = Integer.parseInt(request.getParameter("no"));
-				System.out.println(no);
+				
+				request.setAttribute("no", no);
 
+				
+				WebUtil.forward(request, response, "/deleteForm.jsp");
+				
+				
+			}else if("gdelete".equals(action)) {
+				int no = Integer.parseInt(request.getParameter("no"));
+				String pw=request.getParameter("password");
+				
+				
+				
+				
 				// db사용
 				GuestDao guestDao = new GuestDao();
 
 				// 삭제
-				guestDao.guestDelete(no);
-
-
-				WebUtil.redirect(request, response, "/guestbook3/gtc?action=aform");
+				guestDao.guestDelete(no, pw);
+				
+				
+				WebUtil.forward(request, response, "/guestbook3/gtc?action=aform");
 			}
+			
+			
 		}
 
 
